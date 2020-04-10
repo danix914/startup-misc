@@ -1,0 +1,17 @@
+python -m site # use to check installation directory
+
+# python3 manual installation
+./configure --prefix=/usr/lib/python3.8 --enable-optimizations
+make
+make install
+ln -s /usr/lib/python3.8/bin/python3.8 /usr/bin/python3.8
+
+# if python3 interactive interface works abnormally after manual installation,
+# it's possiable that manual complie python3 will not include 'readline' or 'gnureadline' package.
+# ref: https://github.com/ludwigschwardt/python-gnureadline
+sudo apt install libncurses5-dev
+sudo /usr/lib/python3.8/bin/pip3.8 install gnureadline
+
+# after lacked package(s) be installed under OS, re-configure and install
+./configure --prefix=/usr/lib/python3.8 --enable-optimizations
+make altinstall
