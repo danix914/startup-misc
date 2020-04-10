@@ -1,0 +1,4 @@
+# init python3 venv
+python3 -m venv vEnv
+source vEnv/bin/activate
+pip install --upgrade pip
