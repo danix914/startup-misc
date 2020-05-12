@@ -1,4 +1,5 @@
 python -m site # use to check installation directory
+wget https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz
 
 ### python3 manual installation for ubuntu 16.04
 ./configure --prefix=/usr/lib/python3.8 --enable-optimizations
@@ -21,3 +22,11 @@ make altinstall
 brew install python@3.8
 ln -s /usr/local/opt/python@3.8/bin/python3.8 /usr/local/bin/
 ln -s /usr/local/opt/python@3.8/bin/python3.8-config /usr/local/bin/
+
+
+### python3 manial installation for RHEL7.2 (full packages)
+sudo yum install openssl-devel
+./configure --prefix=/usr/lib/python3.8 --enable-optimizations
+make
+make install
+ln -s /usr/lib/python3.8/bin/python3.8 /usr/bin/python3.8
