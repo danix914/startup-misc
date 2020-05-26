@@ -30,3 +30,12 @@ sudo yum install openssl-devel
 make
 make install
 ln -s /usr/lib/python3.8/bin/python3.8 /usr/bin/python3.8
+
+
+### handle error while loading shared libraries: libpython3.8.so.1.0 ...
+sudo su -
+echo "/usr/lib/python3.8/lib" > /etc/ld.so.conf.d/python3.8.conf
+ldconfig
+
+(Not recommended) Or run below command to export `$LD_LIBRARY_PATH` temporarily:
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/python3.8/lib
